@@ -162,7 +162,8 @@
                                     echo "<script>alert('Thank you for your feed :)')</script>";
                                 }
                                 catch(PDOException $e){
-                                    echo "<script>alert('Error: {$e->getMessage()}')</script>";
+                                    error_log($e->getMessage());
+                                    $error['database'] = "An unexpected error occurred. Please try again later."; 
                                 }
                                 echo "<script>window.location.hash = ''</script>";
                             }
@@ -201,4 +202,5 @@
             <p>All Copyright 2025 &copy; Designed by Moath Al-Shahari</p>
         </footer>
     </body>
+
 </html>
